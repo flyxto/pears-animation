@@ -22,29 +22,19 @@ export async function POST(request: NextRequest) {
       await mkdir(uploadsDir, { recursive: true })
     }
 
-    // 🔴 UPDATED: Create a unique subdirectory for each upload
+    // Create a unique subdirectory for each upload
     const uploadId = `upload_${Date.now()}`
     const uploadSubDir = path.join(uploadsDir, uploadId)
     await mkdir(uploadSubDir, { recursive: true })
 
-    // 🔴 UPDATED: Save image with original name in subdirectory
+    // Save image with original name in subdirectory
     const bytes = await image.arrayBuffer()
     const buffer = Buffer.from(bytes)
     const imagePath = path.join(uploadSubDir, image.name)
     await writeFile(imagePath, buffer)
 
-    // Create animations directory if it doesn't exist
-    const animationsDir = path.join(process.cwd(), 'public', 'animations')
-    if (!existsSync(animationsDir)) {
-      await mkdir(animationsDir, { recursive: true })
-    }
-
-    // 🔴 UPDATED: Create character annotation directory
+    // Create character annotation directory
     const charAnnoDir = path.join(uploadSubDir, 'char_annotations')
-
-    // Output path for animation
-    const outputFileName = `animation_${Date.now()}.gif`  // 🔴 CHANGED: Use .gif instead of .mp4
-    const outputPath = path.join(animationsDir, outputFileName)
 
     // Path to AnimatedDrawings Python script
     const pythonScript = path.join(
@@ -55,16 +45,16 @@ export async function POST(request: NextRequest) {
     )
 
     // Use the conda environment Python path
-    const pythonPath = '/Users/ravindusankalpa/miniconda3/envs/animated-drawings/bin/python'
+    const pythonPath = '/opt/anaconda3/envs/animated_drawings/bin/python'
 
-    // 🔴 UPDATED: Motion and retarget config paths
+    // Motion and retarget config paths
     const motionCfgPath = path.join(
       process.cwd(),
       'AnimatedDrawings',
       'examples',
       'config',
       'motion',
-      'dab.yaml'
+      'wave_hello.yaml'
     )
 
     const retargetCfgPath = path.join(
@@ -78,14 +68,12 @@ export async function POST(request: NextRequest) {
 
     // Execute Python script
     return new Promise((resolve) => {
-      // 🔴 UPDATED: Correct arguments format
       const pythonProcess = spawn(pythonPath, [
         pythonScript,
         imagePath,           // Image file path
         charAnnoDir,         // Character annotation directory
         motionCfgPath,       // Motion config file
-        retargetCfgPath,     // Retarget config file
-        outputPath           // Output file path
+        retargetCfgPath      // Retarget config file
       ])
 
       let errorOutput = ''
@@ -103,8 +91,34 @@ export async function POST(request: NextRequest) {
 
       pythonProcess.on('close', (code) => {
         if (code === 0) {
-          const animationUrl = `/animations/${outputFileName}`
-          resolve(NextResponse.json({ animationUrl }))
+          // The video.gif is generated in char_annotations folder
+          const videoPath = path.join(charAnnoDir, 'video.gif')
+          
+          // Copy to public directory for serving
+          const publicAnimationsDir = path.join(process.cwd(), 'public', 'animations')
+          if (!existsSync(publicAnimationsDir)) {
+            mkdir(publicAnimationsDir, { recursive: true })
+          }
+          
+          const outputFileName = `animation_${uploadId}.gif`
+          const publicVideoPath = path.join(publicAnimationsDir, outputFileName)
+          
+          // Copy file to public directory
+          const fs = require('fs')
+          fs.copyFile(videoPath, publicVideoPath, (err: any) => {
+            if (err) {
+              console.error('Error copying file:', err)
+              resolve(
+                NextResponse.json(
+                  { error: 'Failed to copy animation file', details: err.message },
+                  { status: 500 }
+                )
+              )
+            } else {
+              const animationUrl = `/animations/${outputFileName}`
+              resolve(NextResponse.json({ animationUrl, uploadId }))
+            }
+          })
         } else {
           console.error('Python error:', errorOutput)
           resolve(

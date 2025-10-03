@@ -4,3 +4,974 @@ DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_huma
 INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9873170256614685.
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
 DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/1.1" 404 117
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 191
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.997298538684845.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1603
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759508729558/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c6565f10 at 0x15ce319d0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 2.5925629138946533 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/dab.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759508729558/char_annotations/video.gif
+INFO:root:invalid frame_idx (339), replacing with last frame 338
+INFO:root:Rendered 339 frames in 8.412328958511353 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759508729558/char_annotations/video.gif
+INFO:root:Wrote video to file in in 7.343525171279907 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 193
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.998345136642456.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1527
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759508980573/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle fa449f10 at 0x1641a9cd0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 1.3887338638305664 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/dab.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759508980573/char_annotations/video.gif
+INFO:root:invalid frame_idx (339), replacing with last frame 338
+INFO:root:Rendered 339 frames in 8.442225694656372 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759508980573/char_annotations/video.gif
+INFO:root:Wrote video to file in in 7.304649114608765 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509168546/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle dcd29f00 at 0x142a32d90>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.49260783195495605 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/dab.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509168546/char_annotations/video.gif
+INFO:root:invalid frame_idx (339), replacing with last frame 338
+INFO:root:Rendered 339 frames in 5.665721893310547 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509168546/char_annotations/video.gif
+INFO:root:Wrote video to file in in 7.307884931564331 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509246886/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle fcc29f10 at 0x162932d90>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.48155713081359863 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/dab.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509246886/char_annotations/video.gif
+INFO:root:invalid frame_idx (339), replacing with last frame 338
+INFO:root:Rendered 339 frames in 5.618942975997925 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509246886/char_annotations/video.gif
+INFO:root:Wrote video to file in in 7.431901931762695 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 193
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.998345136642456.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1527
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509453207/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle b6a35f10 at 0x1286e9cd0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 1.4136931896209717 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509453207/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (839), replacing with last frame 838
+INFO:root:Rendered 839 frames in 21.090352058410645 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759509453207/char_annotations/video.gif
+INFO:root:Wrote video to file in in 18.312912940979004 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759511834127/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle d5b05f10 at 0x14bbf2df0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4676859378814697 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759511834127/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (839), replacing with last frame 838
+INFO:root:Rendered 839 frames in 12.880091190338135 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759511834127/char_annotations/video.gif
+INFO:root:Wrote video to file in in 18.141851902008057 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520253675/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c9b05f10 at 0x157a72d60>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.5762500762939453 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520253675/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 6.918777942657471 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520253675/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.393072843551636 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520634552/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c95fdf10 at 0x157232dc0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.46851110458374023 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520634552/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 6.906970977783203 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520634552/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.419181108474731 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520923696/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle d1a65f10 at 0x14fb72d60>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.47484517097473145 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520923696/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 6.768436908721924 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520923696/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.498245000839233 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520975867/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c2ae5f00 at 0x15cab2d00>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4705228805541992 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520975867/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 6.836127996444702 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759520975867/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.595710039138794 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521069341/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c9265f10 at 0x157332d60>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.46623897552490234 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521069341/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 6.830464839935303 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521069341/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.775781154632568 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521303439/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle aa8b1f10 at 0x134e32d00>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.5038349628448486 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521303439/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.488905191421509 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521303439/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.510507106781006 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521378170/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle d56e5f10 at 0x14a6b2d00>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4747929573059082 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521378170/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.224812030792236 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521378170/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.54834508895874 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521801204/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c0689f10 at 0x14fef2d90>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.47730302810668945 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521801204/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.196254014968872 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521801204/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.506965160369873 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521979750/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle fa16df10 at 0x164572d60>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4696388244628906 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521979750/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.110406875610352 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759521979750/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.638187885284424 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522234313/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle a7129f10 at 0x139632d30>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4703500270843506 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522234313/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.1919639110565186 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522234313/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.944047212600708 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522427069/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c0ae9f10 at 0x15eaf2dc0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4687070846557617 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522427069/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.173086881637573 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522427069/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.596996068954468 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522636555/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle c9be5f10 at 0x1682f2d60>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4706308841705322 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522636555/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.184460878372192 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759522636555/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.367316007614136 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523094786/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle da8d5f00 at 0x144e72d60>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.4666280746459961 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523094786/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.346373081207275 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523094786/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.59328818321228 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523272120/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle d742df00 at 0x149172d60>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.48369812965393066 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523272120/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.3742148876190186 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523272120/char_annotations/video.gif
+INFO:root:Wrote video to file in in 10.590448141098022 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523880315/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle f66a9f10 at 0x15ff32d30>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.48209285736083984 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523880315/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.329585075378418 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759523880315/char_annotations/video.gif
+INFO:root:Wrote video to file in in 10.143568992614746 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525538434/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle d9b7df00 at 0x147bb2dc0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.47906994819641113 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525538434/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.4005818367004395 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525538434/char_annotations/video.gif
+INFO:root:Wrote video to file in in 10.018532752990723 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525699254/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle e2bc5f10 at 0x17ccb2dc0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.48404359817504883 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525699254/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.680901765823364 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525699254/char_annotations/video.gif
+INFO:root:Wrote video to file in in 10.530042886734009 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525775963/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle f62e5f10 at 0x1683b2cd0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.48639607429504395 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525775963/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.395057916641235 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759525775963/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.711159944534302 seconds.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_detector HTTP/11" 200 194
+INFO:root:Detected 1 humanoids in image. Using detection with highest score 0.9986221790313721.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8080
+DEBUG:urllib3.connectionpool:http://localhost:8080 "POST /predictions/drawn_humanoid_pose_estimator HTTP/11" 200 1558
+INFO:root:Using user-specified mvc config file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759526822226/char_annotations/mvc_cfg.yaml
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+DEBUG:shapely.geos:Formed path for globbing: dylib_path='/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/*.dylib'
+DEBUG:shapely.geos:Globbed: geos_whl_dylib=['/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos.3.10.3.dylib', '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib']
+DEBUG:shapely.geos:Found GEOS DLL: <CDLL '/opt/anaconda3/envs/animated_drawings/lib/python3.8/site-packages/shapely/.dylibs/libgeos_c.1.16.1.dylib', handle b7a05f00 at 0x129972dc0>, using it.
+INFO:root:OpenGL Version: 4.1 Metal - 89.4
+INFO:root:GLSL: 4.10
+INFO:root:Renderer: Apple M1
+INFO:root:Encountered values close to zero in vector norm. Replacing with 1e-05
+INFO:root:Starting joint -> mask pixel BFS
+INFO:root:Finished joint -> mask pixel BFS in 0.47800302505493164 seconds
+INFO:root:Using BVH file located at /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/AnimatedDrawings/examples/bvh/fair1/wave_hello.bvh
+INFO:root:Upper Limbs projection_method is pca. Running PCA on ['RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandEnd', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandEnd']
+INFO:root:PCA complete. Upper Limbs using [1. 0. 0.]
+INFO:root:Lower Limbs projection_method is pca. Running PCA on ['RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase']
+INFO:root:PCA complete. Lower Limbs using [1. 0. 0.]
+INFO:root:Trunk projection_method is frontal. Using [1. 0. 0.]
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: RightHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: LeftHandThumb1
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root: error finding projection plane for joint_name: End Site
+INFO:root:tA1xA1 is singular. perturbing...
+INFO:root:tA2xA2 is singular. perturbing...
+INFO:root: Writing video to: /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759526822226/char_annotations/video.gif
+WARNING:root:Specified duration of .gif is too low, replacing with 20: 8
+INFO:root:invalid frame_idx (439), replacing with last frame 438
+INFO:root:Rendered 439 frames in 7.346854209899902 seconds.
+INFO:root:VideoWriter will write to /Users/sudharawishvajith/Documents/FLYXTO/EVETNTS/pears-animation/uploads/upload_1759526822226/char_annotations/video.gif
+INFO:root:Wrote video to file in in 9.935937881469727 seconds.
