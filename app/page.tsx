@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Cropper from "react-easy-crop";
 import type { Point, Area } from "react-easy-crop";
 
@@ -24,6 +24,10 @@ export default function Home() {
   const [selectedAnimation, setSelectedAnimation] =
     useState<AnimationType | null>(null);
   const [animationUrl, setAnimationUrl] = useState<string>("");
+  const [userName, setUserName] = useState<string>("");
+
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationFrameRef = useRef<number | null>(null);
 
   const animations = [
     { id: "dab", label: "Dab", category: "FUNNY" },
@@ -52,7 +56,7 @@ export default function Home() {
     const image = new Image();
     image.src = previewUrl;
 
-    return new Promise<string>((resolve) => {
+    return new Promise<File>((resolve) => {
       image.onload = () => {
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d");
@@ -74,8 +78,10 @@ export default function Home() {
 
         canvas.toBlob((blob) => {
           if (blob) {
-            const croppedUrl = URL.createObjectURL(blob);
-            resolve(croppedUrl);
+            const croppedFile = new File([blob], "cropped-image.png", {
+              type: "image/png",
+            });
+            resolve(croppedFile);
           }
         });
       };
@@ -83,9 +89,10 @@ export default function Home() {
   };
 
   const handleCropConfirm = async () => {
-    const croppedImage = await createCroppedImage();
-    if (croppedImage) {
-      setPreviewUrl(croppedImage);
+    const croppedFile = await createCroppedImage();
+    if (croppedFile) {
+      setSelectedImage(croppedFile);
+      setPreviewUrl(URL.createObjectURL(croppedFile));
       setShowCropper(false);
       setCurrentStep("animate");
     }
@@ -114,11 +121,126 @@ export default function Home() {
     setLoading(true);
     setError("");
 
-    // TESTING MODE - Just use the uploaded image as the animation result
-    setTimeout(() => {
-      setAnimationUrl(previewUrl);
+    const formData = new FormData();
+    formData.append("image", selectedImage);
+    formData.append("animationType", animationType);
+
+    try {
+      const response = await fetch("/api/animate", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Animation generation failed");
+      }
+
+      const data = await response.json();
+      setAnimationUrl(data.animationUrl);
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Failed to generate animation"
+      );
+      setSelectedAnimation(null);
+    } finally {
       setLoading(false);
-    }, 1500);
+    }
+  };
+
+  // Draw the animated GIF with logo and name on canvas
+  useEffect(() => {
+    if (!animationUrl || !canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const gifImg = new Image();
+    gifImg.crossOrigin = "anonymous";
+    gifImg.src = animationUrl;
+
+    const logoImg = new Image();
+    logoImg.src = "/images/logo.png";
+
+    let imagesLoaded = 0;
+    const totalImages = 2;
+
+    const checkImagesLoaded = () => {
+      imagesLoaded++;
+      if (imagesLoaded === totalImages) {
+        startAnimation();
+      }
+    };
+
+    gifImg.onload = checkImagesLoaded;
+    logoImg.onload = checkImagesLoaded;
+
+    const startAnimation = () => {
+      const draw = () => {
+        if (!ctx || !canvas) return;
+
+        // Set canvas size to match GIF
+        canvas.width = gifImg.width || 500;
+        canvas.height = gifImg.height || 500;
+
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the animated GIF
+        ctx.drawImage(gifImg, 0, 0, canvas.width, canvas.height);
+
+        // Draw logo at top right corner
+        if (logoImg.complete) {
+          const logoWidth = 80;
+          const logoHeight = (logoImg.height / logoImg.width) * logoWidth;
+          const logoPadding = 15;
+          ctx.drawImage(
+            logoImg,
+            canvas.width - logoWidth - logoPadding,
+            logoPadding,
+            logoWidth,
+            logoHeight
+          );
+        }
+
+        // Draw name at bottom center
+        if (userName) {
+          ctx.font = "bold 24px Arial";
+          ctx.fillStyle = "white";
+          ctx.strokeStyle = "black";
+          ctx.lineWidth = 4;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "bottom";
+
+          const textX = canvas.width / 2;
+          const textY = canvas.height - 20;
+
+          // Draw text outline
+          ctx.strokeText(userName, textX, textY);
+          // Draw text fill
+          ctx.fillText(userName, textX, textY);
+        }
+
+        animationFrameRef.current = requestAnimationFrame(draw);
+      };
+
+      draw();
+    };
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [animationUrl, userName]);
+
+  const downloadCanvas = () => {
+    if (!canvasRef.current) return;
+    const link = document.createElement("a");
+    link.download = `animated-${userName || "character"}.png`;
+    link.href = canvasRef.current.toDataURL();
+    link.click();
   };
 
   return (
@@ -156,6 +278,20 @@ export default function Home() {
                     )
                   )}
                 </div>
+
+                {/* Name Input */}
+                <div className="mb-6">
+                  <label className="block text-sm font-semibold mb-2 text-gray-700">
+                    Enter Name (optional)
+                  </label>
+                  <input
+                    type="text"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    placeholder="Character name..."
+                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-900 focus:outline-none"
+                  />
+                </div>
               </>
             )}
 
@@ -174,11 +310,9 @@ export default function Home() {
                   />
                 </div>
               ) : currentStep === "animate" && animationUrl ? (
-                <img
-                  src={animationUrl}
-                  alt="Animation"
+                <canvas
+                  ref={canvasRef}
                   className="max-w-full max-h-full object-contain"
-                  key={animationUrl}
                 />
               ) : previewUrl ? (
                 <img
@@ -281,17 +415,17 @@ export default function Home() {
                     setPreviewUrl("");
                     setAnimationUrl("");
                     setSelectedAnimation(null);
+                    setUserName("");
                   }}
                   className="flex-1 bg-blue-900 text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition">
                   Start Over
                 </button>
                 {animationUrl && (
-                  <a
-                    href={animationUrl}
-                    download
+                  <button
+                    onClick={downloadCanvas}
                     className="flex-1 bg-blue-400 text-white py-4 rounded-xl font-semibold hover:bg-blue-500 transition text-center">
                     Download
-                  </a>
+                  </button>
                 )}
               </div>
             )}
