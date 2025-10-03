@@ -5,6 +5,8 @@
 import { useState, useRef, useEffect } from "react";
 import Cropper from "react-easy-crop";
 import type { Point, Area } from "react-easy-crop";
+import { FFmpeg } from "@ffmpeg/ffmpeg";
+import { fetchFile, toBlobURL } from "@ffmpeg/util";
 
 type Step = "upload" | "animate";
 
@@ -16,15 +18,55 @@ export default function Home() {
   const [error, setError] = useState<string>("");
   const [animationUrl, setAnimationUrl] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
+  const [processedGifUrl, setProcessedGifUrl] = useState<string>("");
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number | null>(null);
+  const ffmpegRef = useRef<FFmpeg | null>(null);
+  const [ffmpegLoaded, setFfmpegLoaded] = useState(false);
 
   // crop states
   const [crop, setCrop] = useState<Point>({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
   const [showCropper, setShowCropper] = useState(false);
+
+  // Load FFmpeg
+  useEffect(() => {
+    const loadFFmpeg = async () => {
+      try {
+        const ffmpeg = new FFmpeg();
+        ffmpegRef.current = ffmpeg;
+
+        ffmpeg.on("log", ({ message }) => {
+          console.log(message);
+        });
+
+        const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd";
+
+        await ffmpeg.load({
+          coreURL: await toBlobURL(
+            `${baseURL}/ffmpeg-core.js`,
+            "text/javascript"
+          ),
+          wasmURL: await toBlobURL(
+            `${baseURL}/ffmpeg-core.wasm`,
+            "application/wasm"
+          ),
+        });
+
+        setFfmpegLoaded(true);
+        console.log("FFmpeg loaded successfully");
+      } catch (err) {
+        console.error("Failed to load FFmpeg:", err);
+        setError(
+          "Failed to load video processing library. Please refresh the page."
+        );
+      }
+    };
+
+    loadFFmpeg();
+  }, []);
 
   const onCropComplete = (croppedArea: Area, croppedAreaPixels: Area) => {
     setCroppedAreaPixels(croppedAreaPixels);
@@ -86,6 +128,7 @@ export default function Home() {
       setShowCropper(true);
       setError("");
       setAnimationUrl("");
+      setProcessedGifUrl("");
     }
   };
 
@@ -99,19 +142,29 @@ export default function Home() {
     formData.append("image", selectedImage);
     formData.append("animationType", "dance");
 
+    // try {
+    //   const response = await fetch("/api/animate", {
+    //     method: "POST",
+    //     body: formData,
+    //   });
+
+    //   if (!response.ok) {
+    //     const errorData = await response.json();
+    //     throw new Error(errorData.error || "Animation generation failed");
+    //   }
+
+    //   const data = await response.json();
+    //   setAnimationUrl(data.animationUrl);
+    // } catch (err) {
+    //   setError(
+    //     err instanceof Error ? err.message : "Failed to generate animation"
+    //   );
+    // } finally {
+    //   setLoading(false);
+    // }
     try {
-      const response = await fetch("/api/animate", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Animation generation failed");
-      }
-
-      const data = await response.json();
-      setAnimationUrl(data.animationUrl);
+      // For testing - use file from public folder
+      setAnimationUrl("/video.gif");
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "Failed to generate animation"
@@ -121,9 +174,153 @@ export default function Home() {
     }
   };
 
-  // Draw the animated GIF with logo and name on canvas
+  const processGifWithOverlay = async () => {
+    if (!ffmpegRef.current || !ffmpegLoaded || !animationUrl) {
+      console.log("FFmpeg not ready:", { ffmpegLoaded, animationUrl });
+      return;
+    }
+
+    if (!userName) {
+      setProcessedGifUrl("");
+      return;
+    }
+
+    setIsProcessing(true);
+    setError("");
+
+    try {
+      const ffmpeg = ffmpegRef.current;
+
+      console.log("Starting video processing...");
+
+      // Write the input GIF to FFmpeg's virtual file system
+      const gifData = await fetchFile(animationUrl);
+      await ffmpeg.writeFile("input.gif", gifData);
+      console.log("Input GIF written to FFmpeg");
+
+      // Convert GIF to MP4
+      console.log("Converting GIF to MP4...");
+      await ffmpeg.exec([
+        "-i",
+        "input.gif",
+        "-t",
+        "8",
+        "-pix_fmt",
+        "yuv420p",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "23",
+        "-movflags",
+        "+faststart",
+        "-y",
+        "output.mp4",
+      ]);
+
+      console.log("Video conversion complete, reading output...");
+
+      const data = await ffmpeg.readFile("output.mp4");
+      const blob = new Blob([data], { type: "video/mp4" });
+      const url = URL.createObjectURL(blob);
+
+      console.log("Now processing canvas overlay...");
+
+      // Create canvas overlay
+      const video = document.createElement("video");
+      video.src = url;
+      video.muted = true;
+      video.playsInline = true;
+
+      await new Promise((resolve) => {
+        video.onloadedmetadata = resolve;
+      });
+
+      const canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext("2d");
+
+      if (!ctx) throw new Error("Canvas context failed");
+
+      // Setup MediaRecorder to capture canvas
+      const stream = canvas.captureStream(25);
+      const mediaRecorder = new MediaRecorder(stream, {
+        mimeType: "video/webm;codecs=vp8",
+        videoBitsPerSecond: 2500000,
+      });
+
+      const chunks: Blob[] = [];
+      mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+
+      mediaRecorder.onstop = () => {
+        const finalBlob = new Blob(chunks, { type: "video/webm" });
+        const finalUrl = URL.createObjectURL(finalBlob);
+        setProcessedGifUrl(finalUrl);
+        setIsProcessing(false);
+        console.log("Final video with overlay created");
+      };
+
+      // Start recording
+      mediaRecorder.start();
+      video.play();
+
+      const drawFrame = () => {
+        if (video.paused || video.ended) {
+          mediaRecorder.stop();
+          return;
+        }
+
+        // Draw background color
+        ctx.fillStyle = "#FF0000"; // Change this to any color you want
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw video frame
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // Draw text overlay
+        ctx.font = "bold 24px Arial";
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 4;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+
+        const textX = canvas.width / 2;
+        const textY = canvas.height - 20;
+
+        ctx.strokeText(userName, textX, textY);
+        ctx.fillText(userName, textX, textY);
+
+        requestAnimationFrame(drawFrame);
+      };
+
+      drawFrame();
+    } catch (err) {
+      console.error("Error processing video:", err);
+      setError(
+        `Failed to process video: ${
+          err instanceof Error ? err.message : "Unknown error"
+        }`
+      );
+      setIsProcessing(false);
+    }
+  };
+
+  // Trigger processing when animation URL or username changes
   useEffect(() => {
-    if (!animationUrl || !canvasRef.current) return;
+    if (animationUrl && ffmpegLoaded && userName) {
+      processGifWithOverlay();
+    } else if (animationUrl && !userName) {
+      // Clear processed video if username is removed
+      setProcessedGifUrl("");
+    }
+  }, [animationUrl, userName, ffmpegLoaded]);
+
+  // Display the GIF on canvas (for preview)
+  useEffect(() => {
+    if (!processedGifUrl || !canvasRef.current) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -131,80 +328,26 @@ export default function Home() {
 
     const gifImg = new Image();
     gifImg.crossOrigin = "anonymous";
-    gifImg.src = animationUrl;
+    gifImg.src = processedGifUrl;
 
-    const logoImg = new Image();
-    logoImg.src = "/images/logo.png";
-
-    let imagesLoaded = 0;
-    const totalImages = 2;
-
-    const checkImagesLoaded = () => {
-      imagesLoaded++;
-      if (imagesLoaded === totalImages) {
-        startAnimation();
-      }
+    gifImg.onload = () => {
+      canvas.width = gifImg.naturalWidth || 500;
+      canvas.height = gifImg.naturalHeight || 500;
+      ctx.drawImage(gifImg, 0, 0);
     };
+  }, [processedGifUrl]);
 
-    gifImg.onload = checkImagesLoaded;
-    logoImg.onload = checkImagesLoaded;
+  const downloadGif = () => {
+    if (!processedGifUrl && !animationUrl) return;
 
-    const startAnimation = () => {
-      const draw = () => {
-        if (!ctx || !canvas) return;
-
-        canvas.width = gifImg.width || 500;
-        canvas.height = gifImg.height || 500;
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(gifImg, 0, 0, canvas.width, canvas.height);
-
-        if (logoImg.complete) {
-          const logoWidth = 80;
-          const logoHeight = (logoImg.height / logoImg.width) * logoWidth;
-          const logoPadding = 15;
-          ctx.drawImage(
-            logoImg,
-            canvas.width - logoWidth - logoPadding,
-            logoPadding,
-            logoWidth,
-            logoHeight
-          );
-        }
-
-        if (userName) {
-          ctx.font = "bold 24px Arial";
-          ctx.fillStyle = "white";
-          ctx.strokeStyle = "black";
-          ctx.lineWidth = 4;
-          ctx.textAlign = "center";
-          ctx.textBaseline = "bottom";
-
-          const textX = canvas.width / 2;
-          const textY = canvas.height - 20;
-
-          ctx.strokeText(userName, textX, textY);
-          ctx.fillText(userName, textX, textY);
-        }
-
-        animationFrameRef.current = requestAnimationFrame(draw);
-      };
-
-      draw();
-    };
-
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, [animationUrl, userName]);
-
-  const downloadCanvas = () => {
-    if (!canvasRef.current) return;
     const link = document.createElement("a");
-    link.download = `animated-${userName || "character"}.png`;
-    link.href = canvasRef.current.toDataURL();
+    if (processedGifUrl && userName) {
+      link.download = `animated-${userName || "character"}.webm`;
+      link.href = processedGifUrl;
+    } else {
+      link.download = `animated-${userName || "character"}.gif`;
+      link.href = animationUrl;
+    }
     link.click();
   };
 
@@ -252,10 +395,32 @@ export default function Home() {
                   />
                 </div>
               ) : currentStep === "animate" && animationUrl ? (
-                <canvas
-                  ref={canvasRef}
-                  className="max-w-full max-h-full object-contain"
-                />
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {isProcessing && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 bg-opacity-50 z-10">
+                      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-white mb-4"></div>
+                      <p className="text-white font-semibold text-lg">
+                        Processing Video...
+                      </p>
+                    </div>
+                  )}
+                  {userName && processedGifUrl ? (
+                    <video
+                      src={processedGifUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={animationUrl}
+                      alt="Animated GIF"
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  )}
+                </div>
               ) : previewUrl ? (
                 <img
                   src={previewUrl}
@@ -304,11 +469,17 @@ export default function Home() {
             {currentStep === "animate" && !showCropper && !animationUrl && (
               <button
                 onClick={handleAnimate}
-                disabled={loading}
+                disabled={loading || !ffmpegLoaded}
                 className={`bg-blue-900 text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition mb-4 ${
-                  loading ? "opacity-50 cursor-not-allowed" : ""
+                  loading || !ffmpegLoaded
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
                 }`}>
-                {loading ? "Generating Animation..." : "🎬 Animate"}
+                {!ffmpegLoaded
+                  ? "Loading..."
+                  : loading
+                  ? "Generating Animation..."
+                  : "🎬 Animate"}
               </button>
             )}
 
@@ -332,16 +503,24 @@ export default function Home() {
                     setSelectedImage(null);
                     setPreviewUrl("");
                     setAnimationUrl("");
+                    setProcessedGifUrl("");
                     setUserName("");
                   }}
                   className="flex-1 bg-blue-900 text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition">
                   Start Over
                 </button>
-                {animationUrl && (
+                {processedGifUrl && userName && (
                   <button
-                    onClick={downloadCanvas}
+                    onClick={downloadGif}
                     className="flex-1 bg-blue-400 text-white py-4 rounded-xl font-semibold hover:bg-blue-500 transition text-center">
-                    Download
+                    Download Video
+                  </button>
+                )}
+                {!userName && animationUrl && (
+                  <button
+                    onClick={downloadGif}
+                    className="flex-1 bg-blue-400 text-white py-4 rounded-xl font-semibold hover:bg-blue-500 transition text-center">
+                    Download GIF
                   </button>
                 )}
               </div>
