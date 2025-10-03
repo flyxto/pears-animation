@@ -7,13 +7,6 @@ import Cropper from "react-easy-crop";
 import type { Point, Area } from "react-easy-crop";
 
 type Step = "upload" | "animate";
-type AnimationType =
-  | "dab"
-  | "jumping"
-  | "wave"
-  | "zombie"
-  | "dance"
-  | "running";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<Step>("upload");
@@ -21,24 +14,11 @@ export default function Home() {
   const [previewUrl, setPreviewUrl] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>("");
-  const [selectedAnimation, setSelectedAnimation] =
-    useState<AnimationType | null>(null);
   const [animationUrl, setAnimationUrl] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number | null>(null);
-
-  const animations = [
-    { id: "dab", label: "Dab", category: "FUNNY" },
-    { id: "jumping", label: "Jumping", category: "JUMPING" },
-    { id: "wave", label: "Wave", category: "FUNNY" },
-    { id: "zombie", label: "Zombie", category: "WALKING" },
-    { id: "dance", label: "Dance", category: "DANCE" },
-    { id: "running", label: "Running", category: "WALKING" },
-  ];
-
-  const [filterCategory, setFilterCategory] = useState<string>("ALL");
 
   // crop states
   const [crop, setCrop] = useState<Point>({ x: 0, y: 0 });
@@ -98,10 +78,6 @@ export default function Home() {
     }
   };
 
-  const filteredAnimations = animations.filter(
-    (anim) => filterCategory === "ALL" || anim.category === filterCategory
-  );
-
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -110,20 +86,18 @@ export default function Home() {
       setShowCropper(true);
       setError("");
       setAnimationUrl("");
-      setSelectedAnimation(null);
     }
   };
 
-  const handleAnimationSelect = async (animationType: AnimationType) => {
+  const handleAnimate = async () => {
     if (!selectedImage) return;
 
-    setSelectedAnimation(animationType);
     setLoading(true);
     setError("");
 
     const formData = new FormData();
     formData.append("image", selectedImage);
-    formData.append("animationType", animationType);
+    formData.append("animationType", "dance");
 
     try {
       const response = await fetch("/api/animate", {
@@ -142,7 +116,6 @@ export default function Home() {
       setError(
         err instanceof Error ? err.message : "Failed to generate animation"
       );
-      setSelectedAnimation(null);
     } finally {
       setLoading(false);
     }
@@ -180,17 +153,12 @@ export default function Home() {
       const draw = () => {
         if (!ctx || !canvas) return;
 
-        // Set canvas size to match GIF
         canvas.width = gifImg.width || 500;
         canvas.height = gifImg.height || 500;
 
-        // Clear canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Draw the animated GIF
         ctx.drawImage(gifImg, 0, 0, canvas.width, canvas.height);
 
-        // Draw logo at top right corner
         if (logoImg.complete) {
           const logoWidth = 80;
           const logoHeight = (logoImg.height / logoImg.width) * logoWidth;
@@ -204,7 +172,6 @@ export default function Home() {
           );
         }
 
-        // Draw name at bottom center
         if (userName) {
           ctx.font = "bold 24px Arial";
           ctx.fillStyle = "white";
@@ -216,9 +183,7 @@ export default function Home() {
           const textX = canvas.width / 2;
           const textY = canvas.height - 20;
 
-          // Draw text outline
           ctx.strokeText(userName, textX, textY);
-          // Draw text fill
           ctx.fillText(userName, textX, textY);
         }
 
@@ -247,39 +212,17 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-purple-200 via-purple-100 to-blue-100">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
-          {/* Single Panel - Canvas/Preview */}
           <div className="bg-white rounded-3xl shadow-xl p-8 flex flex-col">
-            {/* Title based on step */}
             <h1 className="text-4xl font-bold text-blue-900 mb-6 text-center">
               {currentStep === "upload" ? "UPLOAD A DRAWING" : "ADD ANIMATION"}
             </h1>
 
-            {/* Animation filters - only show in animate step */}
             {currentStep === "animate" && (
               <>
                 <p className="text-gray-700 mb-6 text-center">
-                  Choose one of the motions below to see your character perform
-                  it!
+                  Click the button below to animate your character!
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6 justify-center">
-                  {["ALL", "DANCE", "FUNNY", "JUMPING", "WALKING"].map(
-                    (category) => (
-                      <button
-                        key={category}
-                        onClick={() => setFilterCategory(category)}
-                        className={`px-4 py-2 rounded-full font-semibold ${
-                          filterCategory === category
-                            ? "bg-blue-900 text-white"
-                            : "border-2 border-gray-300 hover:border-blue-900"
-                        }`}>
-                        {category}
-                      </button>
-                    )
-                  )}
-                </div>
-
-                {/* Name Input */}
                 <div className="mb-6">
                   <label className="block text-sm font-semibold mb-2 text-gray-700">
                     Enter Name (optional)
@@ -295,7 +238,6 @@ export default function Home() {
               </>
             )}
 
-            {/* Preview Area */}
             <div className="flex-1 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 min-h-[500px] relative overflow-hidden">
               {showCropper && previewUrl ? (
                 <div className="absolute inset-0">
@@ -328,7 +270,6 @@ export default function Home() {
               )}
             </div>
 
-            {/* Cropper Controls */}
             {showCropper && previewUrl && (
               <div className="bg-gray-50 p-4 rounded-xl mb-4">
                 <label className="text-sm font-semibold mb-2 block">Zoom</label>
@@ -360,39 +301,17 @@ export default function Home() {
               </div>
             )}
 
-            {/* Animation Grid - only show in animate step */}
-            {currentStep === "animate" && !showCropper && (
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                {filteredAnimations.map((anim) => (
-                  <button
-                    key={anim.id}
-                    onClick={() =>
-                      handleAnimationSelect(anim.id as AnimationType)
-                    }
-                    disabled={loading}
-                    className={`border-2 rounded-xl p-4 hover:border-blue-500 cursor-pointer transition ${
-                      selectedAnimation === anim.id
-                        ? "border-blue-500 bg-blue-50"
-                        : "border-gray-300"
-                    } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}>
-                    <div className="aspect-square bg-gray-100 rounded-lg mb-2 flex items-center justify-center">
-                      <span className="text-2xl">🎭</span>
-                    </div>
-                    <p className="text-sm font-semibold text-center">
-                      {anim.label}
-                    </p>
-                  </button>
-                ))}
-              </div>
+            {currentStep === "animate" && !showCropper && !animationUrl && (
+              <button
+                onClick={handleAnimate}
+                disabled={loading}
+                className={`bg-blue-900 text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition mb-4 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}>
+                {loading ? "Generating Animation..." : "🎬 Animate"}
+              </button>
             )}
 
-            {loading && (
-              <div className="mb-4 text-center text-blue-900 font-semibold">
-                Generating {selectedAnimation} animation...
-              </div>
-            )}
-
-            {/* Upload Button */}
             {!showCropper && currentStep === "upload" && !previewUrl && (
               <label className="bg-blue-900 text-white py-4 rounded-xl font-semibold text-center cursor-pointer hover:bg-blue-800 transition">
                 <input
@@ -405,7 +324,6 @@ export default function Home() {
               </label>
             )}
 
-            {/* Action Buttons for animate step */}
             {currentStep === "animate" && !showCropper && (
               <div className="flex gap-4">
                 <button
@@ -414,7 +332,6 @@ export default function Home() {
                     setSelectedImage(null);
                     setPreviewUrl("");
                     setAnimationUrl("");
-                    setSelectedAnimation(null);
                     setUserName("");
                   }}
                   className="flex-1 bg-blue-900 text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition">
